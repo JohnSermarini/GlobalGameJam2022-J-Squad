@@ -427,7 +427,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 3628453237759657768, guid: 69a3bb092de3f4e40ab88220a07edd94, type: 3}
+  m_ModelPrefab: {fileID: 0}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
@@ -877,7 +877,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 1074924205748995359, guid: dc4ed7dadb887834d93b671fc7eee78f, type: 3}
+  m_ModelPrefab: {fileID: 0}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
@@ -1210,6 +1210,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6243694079002775131}
     m_Modifications:
+    - target: {fileID: 400058910, guid: 37306e5921d9bc4479c94798754b3b28, type: 3}
+      propertyPath: m_Sources.Array.data[0].sourceTransform
+      value: 
+      objectReference: {fileID: 6243694080085829560}
     - target: {fileID: 468873567, guid: 37306e5921d9bc4479c94798754b3b28, type: 3}
       propertyPath: m_Sources.Array.data[0].sourceTransform
       value: 
