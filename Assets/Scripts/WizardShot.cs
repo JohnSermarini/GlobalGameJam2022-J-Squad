@@ -12,15 +12,18 @@ public class WizardShot : MonoBehaviour
 
     private SphereCollider collider;
     private Rigidbody rb;
+    private PhotonView photonView;
 
     // Start is called before the first frame update
     void Start()
     {
         collider = GetComponent<SphereCollider>();
         rb = GetComponent<Rigidbody>();
+        photonView = GetComponent<PhotonView>();
 
         rb.AddForce(launchAngle * velocity, ForceMode.VelocityChange);
-        StartCoroutine(DelayedDestroy(duration));
+        if(photonView.IsMine)
+            StartCoroutine(DelayedDestroy(duration));
     }
 
     // Update is called once per frame
@@ -32,7 +35,8 @@ public class WizardShot : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.gameObject.name + " hit!! Pain!! Ow!!");
-        PhotonNetwork.Destroy(this.gameObject);
+        if(photonView.IsMine)
+            PhotonNetwork.Destroy(this.gameObject);
     }
 
     public void SetLaunchParameters(Vector3 launchPoint, Vector3 launchRotation)
