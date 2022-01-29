@@ -100,7 +100,8 @@ namespace Photon.Pun.UtilityScripts
         public override void OnLeftRoom()
         {
             base.OnLeftRoom();
-            Destroy(MyWizard);
+            if(MyWizard != null)
+                Destroy(MyWizard.transform.parent);
         }
         
         public void CreatePlayer()
