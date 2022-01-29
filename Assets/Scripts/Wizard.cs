@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Wizard : MonoBehaviour
 {
+    public PhotonView photonView;
+
     public GameObject head;
     public GameObject lefthand;
     public GameObject righthand;
@@ -12,13 +14,13 @@ public class Wizard : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        photonView = GetComponent<PhotonView>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.C))
+        if(photonView.IsMine && Input.GetKeyDown(KeyCode.C))
         {
             Debug.Log("Shot! Gang gang!!");
             // Shot parameters
