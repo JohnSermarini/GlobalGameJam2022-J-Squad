@@ -30,7 +30,7 @@ public class Game_Manager : MonoBehaviour
         else if(incFire == true)
         {
             FirePotatoTimer = FirePotatoTimer + 1;
-            Debug.Log("Fire count: " + IcePotatoTimer);
+            Debug.Log("Fire count: " + FirePotatoTimer);
         }
     }
 
