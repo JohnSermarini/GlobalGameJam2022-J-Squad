@@ -26,15 +26,17 @@ namespace Photon.Pun.UtilityScripts
     /// <remarks>A custom inspector provides a button to connect in PlayMode, should AutoConnect be false.</remarks>
     public class ConnectAndJoinRandom : MonoBehaviourPunCallbacks
     {
+        public GameObject FireWizard;
+        public GameObject IceWizard;
         /// <summary>Connect automatically? If false you can set this to true later on or call ConnectUsingSettings in your own scripts.</summary>
         public bool AutoConnect = true;
 
         /// <summary>Used as PhotonNetwork.GameVersion.</summary>
         public byte Version = 1;
 
-		/// <summary>Max number of players allowed in room. Once full, a new room will be created by the next connection attemping to join.</summary>
-		[Tooltip("The max number of players allowed in room. Once full, a new room will be created by the next connection attemping to join.")]
-		public byte MaxPlayers = 4;
+        /// <summary>Max number of players allowed in room. Once full, a new room will be created by the next connection attemping to join.</summary>
+        [Tooltip("The max number of players allowed in room. Once full, a new room will be created by the next connection attemping to join.")]
+        public byte MaxPlayers = 4;
 
         public int playerTTL = -1;
 
@@ -50,10 +52,10 @@ namespace Photon.Pun.UtilityScripts
         {
             Debug.Log("ConnectAndJoinRandom.ConnectNow() will now call: PhotonNetwork.ConnectUsingSettings().");
 
-            
+
             PhotonNetwork.ConnectUsingSettings();
             PhotonNetwork.GameVersion = this.Version + "." + SceneManagerHelper.ActiveSceneBuildIndex;
-           
+
         }
 
 
@@ -93,44 +95,15 @@ namespace Photon.Pun.UtilityScripts
 
         public override void OnJoinedRoom()
         {
-            Debug.Log("OnJoinedRoom() called by PUN. Now this client is in a room in region [" + PhotonNetwork.CloudRegion + "]. Game is now running.");
+            base.OnJoinedRoom();
+            IceWizard = PhotonNetwork.Instantiate("IceWizard", transform.position, transform.rotation);
         }
+
+        public override void OnLeftRoom()
+        {
+            base.OnLeftRoom();
+            Destroy(FireWizard);
+        }
+
     }
-
-
-    //#if UNITY_EDITOR
-    //[CanEditMultipleObjects]
-    //[CustomEditor(typeof(ConnectAndJoinRandom), true)]
-    //public class ConnectAndJoinRandomInspector : Editor
-    //{
-    //    void OnEnable() { EditorApplication.update += Update; }
-    //    void OnDisable() { EditorApplication.update -= Update; }
-
-    //    bool isConnectedCache = false;
-
-    //    void Update()
-    //    {
-    //        if (this.isConnectedCache != PhotonNetwork.IsConnected)
-    //        {
-    //            this.Repaint();
-    //        }
-    //    }
-
-    //    public override void OnInspectorGUI()
-    //    {
-    //        this.isConnectedCache = !PhotonNetwork.IsConnected;
-
-
-    //        this.DrawDefaultInspector(); // Draw the normal inspector
-
-    //        if (Application.isPlaying && !PhotonNetwork.IsConnected)
-    //        {
-    //            if (GUILayout.Button("Connect"))
-    //            {
-    //                ((ConnectAndJoinRandom)this.target).ConnectNow();
-    //            }
-    //        }
-    //    }
-    //}
-    //#endif
 }
