@@ -26,9 +26,9 @@ namespace Photon.Pun.UtilityScripts
     /// <remarks>A custom inspector provides a button to connect in PlayMode, should AutoConnect be false.</remarks>
     public class ConnectAndJoinRandom : MonoBehaviourPunCallbacks
     {
-        public GameObject FireWizard; // Player 2
-        public GameObject IceWizard; // Player 1
-        public GameObject FireWizardDebugAlt; // Second firewizard since we have 3 testers
+        public GameObject MyWizard;
+
+        //SpawnPoints
         public Transform FireWizTransform;
         public Transform IceWizTransform;
         public Transform ThirdWizTransform;
@@ -116,7 +116,7 @@ namespace Photon.Pun.UtilityScripts
         public override void OnLeftRoom()
         {
             base.OnLeftRoom();
-            Destroy(FireWizard);
+            Destroy(MyWizard);
         }
         
         public void CreatePlayer()
@@ -127,19 +127,19 @@ namespace Photon.Pun.UtilityScripts
             {
                 this.transform.position = IceWizTransform.position;
                 this.transform.rotation = IceWizTransform.rotation;
-                IceWizard = PhotonNetwork.Instantiate("IceWizard", IceWizTransform.transform.position, IceWizTransform.transform.rotation);
+                MyWizard = PhotonNetwork.Instantiate("IceWizard", IceWizTransform.transform.position, IceWizTransform.transform.rotation);
             }
             else if(playerCount == 2)
             {
                 this.transform.position = FireWizTransform.position;
                 this.transform.rotation = FireWizTransform.rotation;
-                FireWizard = PhotonNetwork.Instantiate("FireWizard", FireWizTransform.transform.position, IceWizTransform.transform.rotation);
+                MyWizard = PhotonNetwork.Instantiate("FireWizard", FireWizTransform.transform.position, IceWizTransform.transform.rotation);
             }
             else
             {
                 this.transform.position = ThirdWizTransform.position;
                 this.transform.rotation = ThirdWizTransform.rotation;
-                FireWizardDebugAlt = PhotonNetwork.Instantiate("FireWizard", ThirdWizTransform.transform.position, ThirdWizTransform.transform.rotation);
+                MyWizard = PhotonNetwork.Instantiate("FireWizard", ThirdWizTransform.transform.position, ThirdWizTransform.transform.rotation);
             }
         }
     }
