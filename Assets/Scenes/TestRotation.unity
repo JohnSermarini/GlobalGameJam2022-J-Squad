@@ -187,38 +187,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7287840171679294575, guid: e4ab930456611e246a3a56992d2d6928, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.78
-      objectReference: {fileID: 0}
-    - target: {fileID: 7287840171679294575, guid: e4ab930456611e246a3a56992d2d6928, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 7287840172691589884, guid: e4ab930456611e246a3a56992d2d6928, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -13.24
-      objectReference: {fileID: 0}
-    - target: {fileID: 7287840172691589884, guid: e4ab930456611e246a3a56992d2d6928, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.77
-      objectReference: {fileID: 0}
-    - target: {fileID: 7287840172691589884, guid: e4ab930456611e246a3a56992d2d6928, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7287840173209420706, guid: e4ab930456611e246a3a56992d2d6928, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 7287840173209420706, guid: e4ab930456611e246a3a56992d2d6928, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 7287840173209420706, guid: e4ab930456611e246a3a56992d2d6928, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -15.84
-      objectReference: {fileID: 0}
     - target: {fileID: 7287840173578365328, guid: e4ab930456611e246a3a56992d2d6928, type: 3}
       propertyPath: m_Name
       value: SpawnPoints
@@ -233,7 +201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7287840173578365329, guid: e4ab930456611e246a3a56992d2d6928, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.71
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7287840173578365329, guid: e4ab930456611e246a3a56992d2d6928, type: 3}
       propertyPath: m_LocalPosition.z
@@ -298,9 +266,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c1b84a427010e0469ce0df07ab64dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FireWizard: {fileID: 0}
-  IceWizard: {fileID: 0}
-  FireWizardDebugAlt: {fileID: 0}
+  MyWizard: {fileID: 0}
+  XROrigin: {fileID: 0}
   FireWizTransform: {fileID: 0}
   IceWizTransform: {fileID: 0}
   ThirdWizTransform: {fileID: 0}
