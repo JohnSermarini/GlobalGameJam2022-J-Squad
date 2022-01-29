@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 877021744}
   - component: {fileID: 877021741}
   - component: {fileID: 877021742}
+  - component: {fileID: 4661800022926400516}
   m_Layer: 0
   m_Name: Gem
   m_TagString: Untagged
@@ -101,9 +102,22 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 877021741}
-  sceneViewId: 0
+  sceneViewId: 1
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &4661800022926400516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3262347344993831476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bbd27f2c763e344698029762a4334c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  photonView: {fileID: 0}
 --- !u!1001 &8178536431322873892
 PrefabInstance:
   m_ObjectHideFlags: 0
