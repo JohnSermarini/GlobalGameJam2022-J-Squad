@@ -29,6 +29,10 @@ namespace Photon.Pun.UtilityScripts
         public GameObject FireWizard; // Player 2
         public GameObject IceWizard; // Player 1
         public GameObject FireWizardDebugAlt; // Second firewizard since we have 3 testers
+        public Transform FireWizTransform;
+        public Transform IceWizTransform;
+        public Transform ThirdWizTransform;
+
 
         /// <summary>Connect automatically? If false you can set this to true later on or call ConnectUsingSettings in your own scripts.</summary>
         public bool AutoConnect = true;
@@ -41,6 +45,13 @@ namespace Photon.Pun.UtilityScripts
         public byte MaxPlayers = 4;
 
         public int playerTTL = -1;
+
+        public void Awake()
+        {
+            FireWizTransform = GameObject.Find("FireWizardSpawnPoint").GetComponent<Transform>();
+            IceWizTransform = GameObject.Find("IceWizardSpawnPoint").GetComponent<Transform>();
+            ThirdWizTransform = GameObject.Find("ThirdWizard").GetComponent<Transform>();
+        }
 
         public void Start()
         {
@@ -114,15 +125,15 @@ namespace Photon.Pun.UtilityScripts
             Debug.Log(playerCount);
             if(playerCount == 1)
             {
-                IceWizard = PhotonNetwork.Instantiate("IceWizard", transform.position, transform.rotation);
+                IceWizard = PhotonNetwork.Instantiate("IceWizard", IceWizTransform.transform.position, IceWizTransform.transform.rotation);
             }
             else if(playerCount == 2)
             {
-                FireWizard = PhotonNetwork.Instantiate("FireWizard", transform.position, transform.rotation);
+                FireWizard = PhotonNetwork.Instantiate("FireWizard", FireWizTransform.transform.position, IceWizTransform.transform.rotation);
             }
             else
             {
-                FireWizardDebugAlt = PhotonNetwork.Instantiate("FireWizard", transform.position, transform.rotation);
+                FireWizardDebugAlt = PhotonNetwork.Instantiate("FireWizard", ThirdWizTransform.transform.position, ThirdWizTransform.transform.rotation);
             }
         }
     }
