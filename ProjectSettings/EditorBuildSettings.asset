@@ -49,4 +49,5 @@ EditorBuildSettings:
     path: Assets/Photon/PhotonUnityNetworking/Demos/DemoSlotRacer/SlotCar-Scene.unity
     guid: 711b38c07f2cf904f81b3422c67f1825
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 68e5349639c1599439b112fdd97019c5, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 1e085e66cd3d5d2479f078f663fb5b09, type: 2}

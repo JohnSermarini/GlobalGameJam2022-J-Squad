@@ -2261,6 +2261,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WizardPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 6243694079002775128, guid: 43e1a98b20504e441b4a9ed98a3d9841, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6243694079002775131, guid: 43e1a98b20504e441b4a9ed98a3d9841, type: 3}
       propertyPath: m_RootOrder
       value: 1
