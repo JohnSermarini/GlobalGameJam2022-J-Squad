@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2880030962094353915}
   - component: {fileID: 2880030962094353914}
+  - component: {fileID: 1180066773}
   m_Layer: 0
   m_Name: LeftRig
   m_TagString: Untagged
@@ -63,6 +64,19 @@ MonoBehaviour:
   m_MoveObjectIn: 14
   m_MoveObjectOut: 15
   m_PoseProvider: {fileID: 0}
+--- !u!135 &1180066773
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2880030962094353912}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2880030962160108002
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,8 +229,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.67, z: 1}
-  m_Center: {x: 0, y: -0.34, z: 0}
+  m_Size: {x: 0.54287446, y: 1.4503543, z: 0.43655965}
+  m_Center: {x: 0.009226725, y: -0.23017973, z: -0.018728986}
 --- !u!1 &2880030962385210718
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,6 +415,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2880030962930214860}
   - component: {fileID: 2880030962930214863}
+  - component: {fileID: 731179415}
   m_Layer: 0
   m_Name: RightRig
   m_TagString: Untagged
@@ -454,3 +469,16 @@ MonoBehaviour:
   m_MoveObjectIn: 14
   m_MoveObjectOut: 15
   m_PoseProvider: {fileID: 0}
+--- !u!135 &731179415
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2880030962930214861}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.1
+  m_Center: {x: 0, y: 0, z: 0}
