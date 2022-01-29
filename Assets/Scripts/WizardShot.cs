@@ -32,8 +32,11 @@ public class WizardShot : MonoBehaviour
         
     }
 
+
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.name + " hit!! WOW!");
+
         // Apply on-hit effect
         PhotonView collisionPhotonView = other.GetComponent<PhotonView>(); 
         if(collisionPhotonView != null && other.gameObject.GetComponent<Wizard>() != null) // Collision object is a wizard
