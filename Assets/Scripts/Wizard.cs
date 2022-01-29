@@ -15,6 +15,8 @@ public class Wizard : MonoBehaviour
     public GameObject righthand;
 
     private GameObject xrOrigin;
+    private bool aButtonHeld = false;
+    private bool bButtonHeld = false;
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -29,12 +31,91 @@ public class Wizard : MonoBehaviour
     {
         if(photonView.IsMine && Input.GetKeyDown(KeyCode.C))
         {
-            // Shot parameters
-            Vector3 shotSpawnPoint = righthand.transform.position + (righthand.transform.forward * 0.25f);
-            // Create shot and direct it
-            GameObject shot = PhotonNetwork.Instantiate(shotClassName, shotSpawnPoint, Quaternion.identity);
-            shot.GetComponent<WizardShot>().SetLaunchParameters(shotSpawnPoint, righthand.transform.forward);
+            CastSpell();
         }
+
+        // Manage user input
+        if(photonView.IsMine)
+        {
+            // A button on right hand
+            bool aButtonDownThisFrame = AButtonPressed();
+            if(aButtonDownThisFrame && !aButtonHeld) // A button held down first frame
+            {
+                Debug.Log("A-button pressed this frame!");
+                aButtonHeld = true;
+                CastSpell();
+            }
+            else if(aButtonDownThisFrame && aButtonHeld) // A button held down second frame and on
+            {
+
+            }
+            else if(!aButtonDownThisFrame && aButtonHeld) // A button released
+            {
+                aButtonHeld = false;
+            }
+
+            // B button on right hand
+            bool bButtonDownThisFrame = BButtonPressed();
+            if(bButtonDownThisFrame && !bButtonHeld) // B button held down first frame
+            {
+                Debug.Log("B-button pressed this frame!");
+                bButtonHeld = true;
+                photonView.RPC("MoveToSpawn", RpcTarget.All);
+            }
+            else if(bButtonDownThisFrame && bButtonHeld) // B button held down second frame and on
+            {
+
+            }
+            else if(!bButtonDownThisFrame && bButtonHeld) // B button released
+            {
+                bButtonHeld = false;
+            }
+        }
+    }
+
+    protected bool AButtonPressed()
+    {
+        var controllers = new List<UnityEngine.XR.InputDevice>();
+        var desiredCharacteristics = UnityEngine.XR.InputDeviceCharacteristics.HeldInHand | UnityEngine.XR.InputDeviceCharacteristics.Right | UnityEngine.XR.InputDeviceCharacteristics.Controller;
+        UnityEngine.XR.InputDevices.GetDevicesWithCharacteristics(desiredCharacteristics, controllers);
+
+        foreach(var device in controllers)
+        {
+            bool buttonValue;
+            if(device.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primaryButton, out buttonValue) && buttonValue)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    protected bool BButtonPressed()
+    {
+        var controllers = new List<UnityEngine.XR.InputDevice>();
+        var desiredCharacteristics = UnityEngine.XR.InputDeviceCharacteristics.HeldInHand | UnityEngine.XR.InputDeviceCharacteristics.Right | UnityEngine.XR.InputDeviceCharacteristics.Controller;
+        UnityEngine.XR.InputDevices.GetDevicesWithCharacteristics(desiredCharacteristics, controllers);
+
+        foreach(var device in controllers)
+        {
+            bool buttonValue;
+            if(device.TryGetFeatureValue(UnityEngine.XR.CommonUsages.secondaryButton, out buttonValue) && buttonValue)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    protected void CastSpell()
+    {
+        // Shot parameters
+        Vector3 shotSpawnPoint = righthand.transform.position + (righthand.transform.forward * 0.25f);
+        // Create shot and direct it
+        GameObject shot = PhotonNetwork.Instantiate(shotClassName, shotSpawnPoint, Quaternion.identity);
+        shot.GetComponent<WizardShot>().SetLaunchParameters(shotSpawnPoint, righthand.transform.forward);
     }
 
     [PunRPC]
