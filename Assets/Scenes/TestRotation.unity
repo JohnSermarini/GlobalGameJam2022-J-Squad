@@ -639,7 +639,7 @@ MonoBehaviour:
   IceWizard: {fileID: 0}
   AutoConnect: 1
   Version: 1
-  MaxPlayers: 2
+  MaxPlayers: 3
   playerTTL: -1
 --- !u!4 &1474345265
 Transform:
