@@ -26,8 +26,10 @@ namespace Photon.Pun.UtilityScripts
     /// <remarks>A custom inspector provides a button to connect in PlayMode, should AutoConnect be false.</remarks>
     public class ConnectAndJoinRandom : MonoBehaviourPunCallbacks
     {
-        public GameObject FireWizard;
-        public GameObject IceWizard;
+        public GameObject FireWizard; // Player 2
+        public GameObject IceWizard; // Player 1
+        public GameObject FireWizardDebugAlt; // Second firewizard since we have 3 testers
+
         /// <summary>Connect automatically? If false you can set this to true later on or call ConnectUsingSettings in your own scripts.</summary>
         public bool AutoConnect = true;
 
@@ -96,7 +98,8 @@ namespace Photon.Pun.UtilityScripts
         public override void OnJoinedRoom()
         {
             base.OnJoinedRoom();
-            IceWizard = PhotonNetwork.Instantiate("IceWizard", transform.position, transform.rotation);
+
+            CreatePlayer();
         }
 
         public override void OnLeftRoom()
@@ -104,6 +107,23 @@ namespace Photon.Pun.UtilityScripts
             base.OnLeftRoom();
             Destroy(FireWizard);
         }
-
+        
+        public void CreatePlayer()
+        {
+            int playerCount = PhotonNetwork.PlayerList.Length;
+            Debug.Log(playerCount);
+            if(playerCount == 1)
+            {
+                IceWizard = PhotonNetwork.Instantiate("IceWizard", transform.position, transform.rotation);
+            }
+            else if(playerCount == 2)
+            {
+                FireWizard = PhotonNetwork.Instantiate("FireWizard", transform.position, transform.rotation);
+            }
+            else
+            {
+                FireWizardDebugAlt = PhotonNetwork.Instantiate("FireWizard", transform.position, transform.rotation);
+            }
+        }
     }
 }
