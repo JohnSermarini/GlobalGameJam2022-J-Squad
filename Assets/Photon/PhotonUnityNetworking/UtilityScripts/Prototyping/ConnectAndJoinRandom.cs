@@ -125,14 +125,20 @@ namespace Photon.Pun.UtilityScripts
             Debug.Log(playerCount);
             if(playerCount == 1)
             {
+                this.transform.position = IceWizTransform.position;
+                this.transform.rotation = IceWizTransform.rotation;
                 IceWizard = PhotonNetwork.Instantiate("IceWizard", IceWizTransform.transform.position, IceWizTransform.transform.rotation);
             }
             else if(playerCount == 2)
             {
+                this.transform.position = FireWizTransform.position;
+                this.transform.rotation = FireWizTransform.rotation;
                 FireWizard = PhotonNetwork.Instantiate("FireWizard", FireWizTransform.transform.position, IceWizTransform.transform.rotation);
             }
             else
             {
+                this.transform.position = ThirdWizTransform.position;
+                this.transform.rotation = ThirdWizTransform.rotation;
                 FireWizardDebugAlt = PhotonNetwork.Instantiate("FireWizard", ThirdWizTransform.transform.position, ThirdWizTransform.transform.rotation);
             }
         }
