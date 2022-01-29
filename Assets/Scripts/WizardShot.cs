@@ -34,9 +34,16 @@ public class WizardShot : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.name + " hit!! Pain!! Ow!!");
+        // Delete shot object
         if(photonView.IsMine)
             PhotonNetwork.Destroy(this.gameObject);
+        // Apply on-hit effect
+        PhotonView collisionPhotonView = other.GetComponent<PhotonView>(); 
+        if(collisionPhotonView != null && other.gameObject.GetComponent<Wizard>() != null) // Collision object is a wizard
+        {
+            collisionPhotonView.RPC("MoveToSpawn", RpcTarget.All);
+            //collisionPhotonView.RPC("MoveToSpawn", RpcTarget.All, "jup", "and jup.")
+        }
     }
 
     public void SetLaunchParameters(Vector3 launchPoint, Vector3 launchRotation)
