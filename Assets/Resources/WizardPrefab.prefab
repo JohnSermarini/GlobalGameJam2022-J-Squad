@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 6243694079002775129}
   - component: {fileID: -2415540095366568051}
   - component: {fileID: 447847002544937827}
+  - component: {fileID: 8125678395390440869}
   m_Layer: 0
   m_Name: WizardPrefab
   m_TagString: Untagged
@@ -224,6 +225,22 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &8125678395390440869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6243694079002775128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 570d2f1c60e0dc34db6269f77f09fce4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  head: {fileID: 0}
+  leftHand: {fileID: 0}
+  rightHand: {fileID: 0}
+  photonView: {fileID: 0}
 --- !u!1 &6243694079779927069
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,6 +254,7 @@ GameObject:
   - component: {fileID: 6243694079779927073}
   - component: {fileID: 6243694079779927072}
   - component: {fileID: 6243694079779927071}
+  - component: {fileID: 1625483611618554969}
   m_Layer: 0
   m_Name: RightHand Controller
   m_TagString: Untagged
@@ -742,6 +760,22 @@ MonoBehaviour:
   m_SnapThresholdDistance: 10
   m_Reticle: {fileID: 0}
   m_StopLineAtFirstRaycastHit: 1
+--- !u!114 &1625483611618554969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6243694079779927069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 1
+  m_UseLocal: 1
 --- !u!1 &6243694080085829559
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,6 +948,7 @@ GameObject:
   - component: {fileID: 6243694080126507265}
   - component: {fileID: 6243694080126507264}
   - component: {fileID: 6243694080126507391}
+  - component: {fileID: 1013049341056898575}
   m_Layer: 0
   m_Name: LeftHand Controller
   m_TagString: Untagged
@@ -1419,6 +1454,22 @@ MonoBehaviour:
   m_SnapThresholdDistance: 10
   m_Reticle: {fileID: 0}
   m_StopLineAtFirstRaycastHit: 1
+--- !u!114 &1013049341056898575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6243694080126507389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 1
+  m_UseLocal: 1
 --- !u!1 &7526209392045765832
 GameObject:
   m_ObjectHideFlags: 0
