@@ -26,6 +26,7 @@ namespace Photon.Pun.UtilityScripts
     /// <remarks>A custom inspector provides a button to connect in PlayMode, should AutoConnect be false.</remarks>
     public class ConnectAndJoinRandom : MonoBehaviourPunCallbacks
     {
+        public bool usingNewWizard = false;
         public GameObject MyWizard;
         public GameObject XROrigin;
 
@@ -112,19 +113,30 @@ namespace Photon.Pun.UtilityScripts
             {
                 this.transform.position = IceWizTransform.position;
                 this.transform.rotation = IceWizTransform.rotation;
-                MyWizard = PhotonNetwork.Instantiate("IceWizard", transform.position, transform.rotation);
+                if(usingNewWizard)
+                    MyWizard = PhotonNetwork.Instantiate("IceWizard 1", transform.position, transform.rotation);
+                else
+                    MyWizard = PhotonNetwork.Instantiate("IceWizard", transform.position, transform.rotation);
+
             }
             else if(playerCount == 2)
             {
                 this.transform.position = FireWizTransform.position;
                 this.transform.rotation = FireWizTransform.rotation;
-                MyWizard = PhotonNetwork.Instantiate("FireWizard", transform.position, transform.rotation);
+                if(usingNewWizard)
+                    MyWizard = PhotonNetwork.Instantiate("FireWizard 1", transform.position, transform.rotation);
+                else
+                    MyWizard = PhotonNetwork.Instantiate("FireWizard", transform.position, transform.rotation);
+
             }
             else
             {
                 this.transform.position = ThirdWizTransform.position;
                 this.transform.rotation = ThirdWizTransform.rotation;
-                MyWizard = PhotonNetwork.Instantiate("FireWizard", transform.position, transform.rotation);
+                if(usingNewWizard)
+                    MyWizard = PhotonNetwork.Instantiate("FireWizard 1", transform.position, transform.rotation);
+                else
+                    MyWizard = PhotonNetwork.Instantiate("FireWizard", transform.position, transform.rotation);
             }
             XROrigin.transform.position = this.transform.position;
             XROrigin.transform.rotation = this.transform.rotation;
