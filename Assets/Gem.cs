@@ -8,12 +8,15 @@ public class Gem : MonoBehaviour
     public PhotonView photonView;
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.LogError(this.gameObject.name + " collider entered " + collision.gameObject.name);
-        if (collision.gameObject.name == "XR Rig") 
+        //Debug.LogError(this.gameObject.name + " collider entered " + collision.gameObject.name);
+
+        if (collision.gameObject.name == "XR Origin") 
         {
             if (photonView == null)
                 photonView = gameObject.GetComponent<PhotonView>();
             photonView.RequestOwnership();
+
+            Debug.LogError("photonView owned by: " + photonView.Owner);
         }
     }
 }
