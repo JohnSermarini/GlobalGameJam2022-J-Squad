@@ -45,11 +45,15 @@ public class WizardShot : MonoBehaviour
             if (wizard.gameObject.name.Contains("Ice"))
                 isIce = true;
 
+            /*
             PhotonView collisionPhotonView = wizard.GetComponent<PhotonView>();
             if(collisionPhotonView != null) 
             {
                 collisionPhotonView.RPC("MoveToSpawn", RpcTarget.Others, isIce);
             }
+            */
+
+            wizard.MoveToSpawn(isIce);
         }
 
         if(photonView.IsMine)
