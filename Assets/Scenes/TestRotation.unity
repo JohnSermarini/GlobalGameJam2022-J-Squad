@@ -381,6 +381,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1635069356374663637, guid: 9a2e51a5af84da04085671dc4405e8db, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1635069356374663637, guid: 9a2e51a5af84da04085671dc4405e8db, type: 3}
+      propertyPath: m_Volume
+      value: 0.07
+      objectReference: {fileID: 0}
     - target: {fileID: 2999907619692152309, guid: 9a2e51a5af84da04085671dc4405e8db, type: 3}
       propertyPath: m_Name
       value: Arena
