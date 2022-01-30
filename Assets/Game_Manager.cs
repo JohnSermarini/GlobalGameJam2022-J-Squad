@@ -22,14 +22,14 @@ public class Game_Manager : MonoBehaviour
 
     private void Update()
     {
-        if(gemHeld)
+        if (gemHeld)
         {
-            if(incIce == true)
+            if (incIce == true)
             {
                 IcePotatoTimer = IcePotatoTimer + 1;
                 //Debug.Log("Ice count: " + IcePotatoTimer);
             }
-            else if(incFire == true)
+            else if (incFire == true)
             {
                 FirePotatoTimer = FirePotatoTimer + 1;
                 //Debug.Log("Fire count: " + FirePotatoTimer);
@@ -57,25 +57,31 @@ public class Game_Manager : MonoBehaviour
         }
         */
         Wizard wizard = Wizard.GetWizardUsingName(wizardName);
-
+        wizard.WandCrystal.SetActive(true);
         gemHeld = true;
         incIce = false;
         incFire = false;
-        if(wizard is IceWizard)
+        if (wizard is IceWizard)
         {
             incIce = true;
         }
-        else if(wizard is FireWizard)
+        else if (wizard is FireWizard)
         {
             incFire = true;
         }
     }
 
     [PunRPC]
-    private void GemDropped()
+    private void GemDropped(bool isIce)
     {
         Debug.Log("GemDropped RPC recieved");
+        Wizard wizard;
+        if (isIce)
+            wizard = GameObject.FindObjectOfType<IceWizard>();
+        else
+            wizard = GameObject.FindObjectOfType<FireWizard>();
 
+        wizard.WandCrystal.SetActive(false);
         gemHeld = false;
         incFire = false;
         incIce = false;

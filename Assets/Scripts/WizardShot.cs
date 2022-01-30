@@ -62,7 +62,7 @@ public class WizardShot : MonoBehaviour
                     {
                         // Drop the gem at ice
                         //gem.GetComponent<PhotonView>().RequestOwnership();
-                        gem.DropGemAtPosition(xrOrigin.transform.position + (Vector3.up * 2.0f));
+                        gem.DropGemAtPosition(xrOrigin.transform.position + (Vector3.up * 2.0f), true);
                         Debug.Log("Iceman is dropping that mf");
 
                     }
@@ -77,7 +77,7 @@ public class WizardShot : MonoBehaviour
                     {
                         // Drop the gem at fire
                         //gem.GetComponent<PhotonView>().RequestOwnership();
-                        gem.DropGemAtPosition(xrOrigin.transform.position + (Vector3.up * 2.0f));
+                        gem.DropGemAtPosition(xrOrigin.transform.position + (Vector3.up * 2.0f), false);
                         Debug.Log("Fireman is dropping that mf");
                     }
                     else

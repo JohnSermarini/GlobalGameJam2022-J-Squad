@@ -493,6 +493,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9be213c8e5b39c342865d3a8b23ece13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WandCrystal: {fileID: 335552985836198080}
+  FireSpawn: {fileID: 0}
+  IceSpawn: {fileID: 0}
   photonView: {fileID: 0}
   head: {fileID: 961440777297025309}
   lefthand: {fileID: 1039813564221236869}
@@ -591,6 +594,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: crystal
       objectReference: {fileID: 0}
+    - target: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4000011695518034, guid: 465c505844950da499dcf096a6da4409, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -649,6 +656,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 465c505844950da499dcf096a6da4409, type: 3}
+--- !u!1 &335552985836198080 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+  m_PrefabInstance: {fileID: 336523301363912958}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6847155250758061099
 PrefabInstance:
   m_ObjectHideFlags: 0

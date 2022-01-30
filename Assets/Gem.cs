@@ -112,7 +112,7 @@ public class Gem : MonoBehaviour
     //}
 
 
-    public void DropGemAtPosition(Vector3 position)
+    public void DropGemAtPosition(Vector3 position, bool isIce)
     {
         //Unparent if necessary
         Debug.Log("Drop DropGemAtPosition called at " + position);
@@ -121,7 +121,7 @@ public class Gem : MonoBehaviour
         photonView.RPC("FixComponentOnDrop", RpcTarget.All);
 
         PhotonView gameManagerPhotonView = gameManager.GetComponent<PhotonView>();
-        gameManagerPhotonView.RPC("GemDropped", RpcTarget.All);
+        gameManagerPhotonView.RPC("GemDropped", RpcTarget.All, isIce);
     }
 
     [PunRPC]

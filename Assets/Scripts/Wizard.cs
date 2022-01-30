@@ -8,7 +8,7 @@ public class Wizard : MonoBehaviour
     protected string shotClassName = "WizardShot";
     protected Vector3 spawnPoint = Vector3.zero;
     protected Quaternion spawnRotation = Quaternion.identity;
-
+    public GameObject WandCrystal;
     public Transform FireSpawn;
     public Transform IceSpawn;
 
@@ -24,8 +24,8 @@ public class Wizard : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
+        //WandCrystal.SetActive(false);
         photonView = GetComponent<PhotonView>();
-
         xrOrigin = GameObject.Find("XR Origin");
 
         FireSpawn = GameObject.Find("FireWizardSpawnPoint").GetComponent<Transform>();
