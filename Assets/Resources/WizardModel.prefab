@@ -1736,6 +1736,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2583287966853408661}
+  - component: {fileID: 8459889229671088614}
   m_Layer: 0
   m_Name: Armature
   m_TagString: Untagged
@@ -1759,6 +1760,22 @@ Transform:
   m_Father: {fileID: 6875162554977318667}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8459889229671088614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4127097067562724831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &4227448542744794071
 GameObject:
   m_ObjectHideFlags: 0
@@ -2702,6 +2719,8 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 7834477107562915520}
+  - {fileID: 8459889229671088614}
+  - {fileID: 0}
   - {fileID: 9006085940045214169}
   - {fileID: 5736075842651911916}
   - {fileID: 1514700999522141476}
@@ -2734,6 +2753,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c83aff5b1006d4aa10173f6e77868c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WandCrystal: {fileID: 0}
+  FireSpawn: {fileID: 0}
+  IceSpawn: {fileID: 0}
   photonView: {fileID: 319210426633528181}
   head: {fileID: 7995388895405932699}
   lefthand: {fileID: 7202177049111648892}
