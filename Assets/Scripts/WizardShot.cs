@@ -35,26 +35,23 @@ public class WizardShot : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log(other.name + " hit!! WOW!");
-
-        // TODO set up XR self check
-        // If hit XR rig, kill other player
         if(other.tag == "XR")
         {
-            Wizard wizard = Wizard.GetEnemyWizard();
+            Wizard wizard = Wizard.GetMyWizard();
             Debug.Log(wizard.transform.parent.name + " hit!");
 
-            // Apply on-hit effect
+            bool isIce = false;
+
+            if (wizard.gameObject.name.Contains("Ice"))
+                isIce = true;
+
             PhotonView collisionPhotonView = wizard.GetComponent<PhotonView>();
-            //if(collisionPhotonView != null && other.gameObject.GetComponent<Wizard>() != null) // Collision object is a wizard
-            if(collisionPhotonView != null) // Collision object is a wizard
+            if(collisionPhotonView != null) 
             {
-                collisionPhotonView.RPC("MoveToSpawn", RpcTarget.All);
-                //collisionPhotonView.RPC("MoveToSpawn", RpcTarget.All, "jup", "and jup.")
+                collisionPhotonView.RPC("MoveToSpawn", RpcTarget.Others, isIce);
             }
         }
 
-        // Delete shot object
         if(photonView.IsMine)
             PhotonNetwork.Destroy(this.gameObject);
     }

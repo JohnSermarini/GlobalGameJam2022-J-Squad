@@ -19,13 +19,5 @@ public class IceWizard : Wizard
     protected override void Update()
     {
         base.Update();
-
-        /*
-        if(photonView.IsMine && Input.GetKeyDown(KeyCode.X))
-        {
-            Debug.Log("MoveToSpawn about to call");
-            photonView.RPC("MoveToSpawn", RpcTarget.All);
-        }
-        */
     }
 }

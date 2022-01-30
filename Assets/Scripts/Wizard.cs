@@ -9,6 +9,10 @@ public class Wizard : MonoBehaviour
     protected Vector3 spawnPoint = Vector3.zero;
     protected Quaternion spawnRotation = Quaternion.identity;
 
+    public Transform FireSpawn;
+    public Transform IceSpawn;
+
+
     public PhotonView photonView;
     public GameObject head;
     public GameObject lefthand;
@@ -24,6 +28,9 @@ public class Wizard : MonoBehaviour
         photonView = GetComponent<PhotonView>();
 
         xrOrigin = GameObject.Find("XR Origin");
+
+        FireSpawn = GameObject.Find("FireWizardSpawnPoint").GetComponent<Transform>();
+        IceSpawn = GameObject.Find("IceWizardSpawnPoint").GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -60,7 +67,7 @@ public class Wizard : MonoBehaviour
             {
                 Debug.Log("B-button pressed this frame!");
                 bButtonHeld = true;
-                photonView.RPC("MoveToSpawn", RpcTarget.All);
+                photonView.RPC("MoveToSpawn", RpcTarget.Others);
             }
             else if(bButtonDownThisFrame && bButtonHeld) // B button held down second frame and on
             {
@@ -119,10 +126,14 @@ public class Wizard : MonoBehaviour
     }
 
     [PunRPC]
-    protected void MoveToSpawn()
+    protected void MoveToSpawn(bool isIce)
     {
         Debug.Log("MoveToSpawn called on " + transform.parent.name);
-        xrOrigin.transform.position = spawnPoint;
+        if(isIce)
+            xrOrigin.transform.position = IceSpawn.position;
+        else
+            xrOrigin.transform.position = FireSpawn.position;
+
         //transform.rotation = spawnRotation;
     }
 
@@ -161,6 +172,26 @@ public class Wizard : MonoBehaviour
         if(wizard == null)
         {
             Debug.LogError("ERROR: Enemy wizard not found!");
+        }
+
+        return null;
+    }
+
+    public static Wizard GetMyWizard()
+    {
+        Wizard wizard = null;
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        for (int i = 0; i < players.Length; i++)
+        {
+            if (players[i].GetComponentInChildren<PhotonView>() != null && players[i].GetComponentInChildren<PhotonView>().IsMine)
+            {
+                wizard = players[i].GetComponentInChildren<Wizard>();
+                return wizard;
+            }
+        }
+        if (wizard == null)
+        {
+            Debug.LogError("ERROR: My wizard not found!");
         }
 
         return null;
