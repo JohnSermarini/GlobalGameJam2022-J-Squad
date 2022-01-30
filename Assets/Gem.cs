@@ -27,24 +27,27 @@ public class Gem : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // Collision with player
-        if(collision.gameObject.name == "XR Origin") 
+        if (collision.gameObject.name == "XR Origin")
         {
+            Debug.LogError("XR Origin");
             //if (photonView == null)
             //photonView = gameObject.GetComponent<PhotonView>();
 
             photonView.RequestOwnership();
 
             GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-            for(int i = 0; i < players.Length; i++)
+            for (int i = 0; i < players.Length; i++)
             {
                 string playerWizardName = "";
-                PhotonView playerPhotonView = players[i].GetComponent<PhotonView>();
-                if(playerPhotonView == null)
+                PhotonView playerPhotonView = players[i].transform.GetChild(0).GetComponent<PhotonView>();
+                if (playerPhotonView == null)
                 {
                     return;
                 }
-                if(playerPhotonView.IsMine == true) // Player grabbed Gem
+                if (playerPhotonView.IsMine == true) // Player grabbed Gem
                 {
+                    Debug.LogError("mine XR Origin");
+
                     playerWizardName = playerPhotonView.transform.parent.name;
                     //Wizard wizard = playerPhotonView.gameObject.GetComponent<Wizard>();
                     photonView.RPC("PickUpGem", RpcTarget.All, playerWizardName);//PickUpGem(wizard);

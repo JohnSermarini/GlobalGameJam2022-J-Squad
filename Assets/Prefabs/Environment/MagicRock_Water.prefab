@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1727148722989140859}
   - component: {fileID: 5059084318502527723}
   - component: {fileID: 5776951681948694147}
-  - component: {fileID: 4124702290361219960}
   m_Layer: 0
   m_Name: MagicRock_Water
   m_TagString: Untagged
@@ -84,17 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4124702290361219960
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2574021029902883892}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -3986541585784813392, guid: 27b55ee0396242b44aa3724b40d8b698, type: 3}

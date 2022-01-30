@@ -1,4 +1,5 @@
 using Photon.Pun;
+using Photon.Pun.UtilityScripts;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,16 +17,17 @@ public class WizardShot : MonoBehaviour
 
     private Game_Manager gameManager;
     private Gem gem;
+    public GameObject myWiz;
 
     // Start is called before the first frame update
     void Start()
     {
+        myWiz = GameObject.Find("Photon").GetComponent<ConnectAndJoinRandom>().MyWizard;
         collider = GetComponent<SphereCollider>();
         rb = GetComponent<Rigidbody>();
         photonView = GetComponent<PhotonView>();
 
         gameManager = GameObject.Find("GameManager").GetComponent<Game_Manager>();
-        gem = GameObject.Find("Gem").GetComponent<Gem>();
 
         rb.AddForce(launchAngle * velocity, ForceMode.VelocityChange);
         if(photonView.IsMine)
@@ -51,10 +53,16 @@ public class WizardShot : MonoBehaviour
             if (wizard.gameObject.transform.parent.name.Contains("Ice"))
                 isIce = true;
 
-            // Gem
+            //if (isIce && myWiz.name.Contains("Ice"))
+            //    return;
+            //if (!isIce && myWiz.name.Contains("Fire"))
+            //    return;
+            
             if(gameManager.gemHeld)
             {
                 GameObject xrOrigin = GameObject.Find("XR Origin");
+                if (gem == null)
+                    gem = GameObject.FindGameObjectWithTag("Gem").GetComponent<Gem>();
 
                 if(gameManager.incIce == true) // Ice has it
                 {
@@ -87,8 +95,8 @@ public class WizardShot : MonoBehaviour
                 }
             }
 
-            // Respawn
             wizard.MoveToSpawn(isIce);
+            
         }
 
         if(photonView.IsMine)

@@ -29,11 +29,13 @@ namespace Photon.Pun.UtilityScripts
         public bool usingNewWizard = false;
         public GameObject MyWizard;
         public GameObject XROrigin;
+        public GameObject Gem;
 
         //SpawnPoints
         public Transform FireWizTransform;
         public Transform IceWizTransform;
         public Transform ThirdWizTransform;
+        public Transform GemSpawn;
 
 
         /// <summary>Connect automatically? If false you can set this to true later on or call ConnectUsingSettings in your own scripts.</summary>
@@ -52,6 +54,7 @@ namespace Photon.Pun.UtilityScripts
             FireWizTransform = GameObject.Find("FireWizardSpawnPoint").GetComponent<Transform>();
             IceWizTransform = GameObject.Find("IceWizardSpawnPoint").GetComponent<Transform>();
             ThirdWizTransform = GameObject.Find("ThirdWizard").GetComponent<Transform>();
+            GemSpawn = GameObject.Find("GemSpawnPoint").GetComponent<Transform>();
             XROrigin = GameObject.Find("XR Origin");
         }
 
@@ -118,6 +121,9 @@ namespace Photon.Pun.UtilityScripts
                 else
                     MyWizard = PhotonNetwork.Instantiate("IceWizard", transform.position, transform.rotation);
 
+                // Spawn gem
+                if(Gem == null)
+                    Gem = PhotonNetwork.Instantiate("Gem", GemSpawn.position, GemSpawn.rotation);
             }
             else if(playerCount == 2)
             {

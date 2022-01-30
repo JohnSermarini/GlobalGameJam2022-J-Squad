@@ -9,9 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6243694079002775131}
-  - component: {fileID: 5430414191878657721}
-  - component: {fileID: 450692522909790019}
-  - component: {fileID: 2063596676004760589}
   m_Layer: 0
   m_Name: IceWizard
   m_TagString: Player
@@ -35,13 +32,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5430414191878657721
+--- !u!114 &897825068348178708
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6243694079002775128}
+  m_GameObject: {fileID: 8434695898654301269}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
@@ -60,13 +57,32 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &450692522909790019
+--- !u!114 &1069143888156810873
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6243694079002775128}
+  m_GameObject: {fileID: 8434695898654301269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95c83aff5b1006d4aa10173f6e77868c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WandCrystal: {fileID: 2746620348385268252}
+  FireSpawn: {fileID: 0}
+  IceSpawn: {fileID: 0}
+  photonView: {fileID: 897825068348178708}
+  head: {fileID: 408422770271655208}
+  lefthand: {fileID: 3153872257209676773}
+  righthand: {fileID: 1392144753664163942}
+--- !u!114 &1270653092266712357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8434695898654301269}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1918f158188870840be32b099b759bee, type: 3}
@@ -76,29 +92,10 @@ MonoBehaviour:
   head: {fileID: 1477786671314191468}
   lefthand: {fileID: 8255574256462659124}
   righthand: {fileID: 7465588776854608095}
-  photonView: {fileID: 5430414191878657721}
+  photonView: {fileID: 897825068348178708}
   headRig: {fileID: 0}
   leftHandRig: {fileID: 0}
   rightHandRig: {fileID: 0}
---- !u!114 &2063596676004760589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6243694079002775128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95c83aff5b1006d4aa10173f6e77868c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WandCrystal: {fileID: 2746620348385268252}
-  FireSpawn: {fileID: 0}
-  IceSpawn: {fileID: 0}
-  photonView: {fileID: 5430414191878657721}
-  head: {fileID: 408422770271655208}
-  lefthand: {fileID: 3153872257209676773}
-  righthand: {fileID: 6611701045537763324}
 --- !u!1001 &7790089145817761430
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -154,36 +151,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wizard
       objectReference: {fileID: 0}
-    - target: {fileID: 3614849149817798249, guid: a0b2f02951c220849ad352ec4a6ec12d, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3d69e6496f407054098434357e3b5bd3, type: 2}
-    - target: {fileID: 4626415418287335374, guid: a0b2f02951c220849ad352ec4a6ec12d, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3d69e6496f407054098434357e3b5bd3, type: 2}
-    - target: {fileID: 4724612605833261214, guid: a0b2f02951c220849ad352ec4a6ec12d, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3d69e6496f407054098434357e3b5bd3, type: 2}
-    - target: {fileID: 5953135384415891768, guid: a0b2f02951c220849ad352ec4a6ec12d, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3d69e6496f407054098434357e3b5bd3, type: 2}
+    - target: {fileID: 1807627863376255683, guid: a0b2f02951c220849ad352ec4a6ec12d, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5333951265666045066, guid: a0b2f02951c220849ad352ec4a6ec12d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6620817616349040738, guid: a0b2f02951c220849ad352ec4a6ec12d, type: 3}
       propertyPath: sceneViewId
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7151135847140104195, guid: a0b2f02951c220849ad352ec4a6ec12d, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3d69e6496f407054098434357e3b5bd3, type: 2}
-    - target: {fileID: 7615858092061823934, guid: a0b2f02951c220849ad352ec4a6ec12d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0b2f02951c220849ad352ec4a6ec12d, type: 3}
+--- !u!1 &8434695898654301269 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1807627863376255683, guid: a0b2f02951c220849ad352ec4a6ec12d, type: 3}
+  m_PrefabInstance: {fileID: 7790089145817761430}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9098924463970027247 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1323543007920881785, guid: a0b2f02951c220849ad352ec4a6ec12d, type: 3}
@@ -210,6 +196,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1392144753664163942 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9172161780263913200, guid: a0b2f02951c220849ad352ec4a6ec12d, type: 3}
+  m_PrefabInstance: {fileID: 7790089145817761430}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7465588776854608095 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 828923731108159049, guid: a0b2f02951c220849ad352ec4a6ec12d, type: 3}
@@ -220,17 +211,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4719509740442973539, guid: a0b2f02951c220849ad352ec4a6ec12d, type: 3}
   m_PrefabInstance: {fileID: 7790089145817761430}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1392144753664163942}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &6611701045537763324 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4024687408795838826, guid: a0b2f02951c220849ad352ec4a6ec12d, type: 3}
-  m_PrefabInstance: {fileID: 7790089145817761430}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2746620348385268252 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5333951265666045066, guid: a0b2f02951c220849ad352ec4a6ec12d, type: 3}
