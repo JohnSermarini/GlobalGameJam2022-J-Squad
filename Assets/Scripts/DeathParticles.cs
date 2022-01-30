@@ -17,6 +17,10 @@ public class DeathParticles : MonoBehaviour
         photonView = GetComponent<PhotonView>();
         particles = GetComponent<ParticleSystem>();
 
+        // Set rotation to default
+        transform.rotation = Quaternion.identity;
+        transform.rotation = Quaternion.Euler(new Vector3(-90f, 0f, 0f));
+
         // Set duration to variable
         if(particles.isPlaying)
             particles.Stop();
