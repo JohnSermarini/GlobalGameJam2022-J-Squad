@@ -17,12 +17,15 @@ public class Game_Manager : MonoBehaviour
 
     public Image IceBillboard;
     public Image FireBillboard;
+    public GameObject Fireworks;
 
     public PhotonView photonView;
 
     private void Start()
     {
         photonView = GetComponent<PhotonView>();
+        Fireworks = GameObject.Find("Fireworks");
+        Fireworks.SetActive(false);
     }
 
     private void Update()
@@ -37,6 +40,7 @@ public class Game_Manager : MonoBehaviour
                 {
                     WinnerText.text = "Ice Wizard Wins!";
                     WinnerText.gameObject.SetActive(true);
+                    Fireworks.SetActive(true);
                 }
             }
             else if (incFire == true)
@@ -47,6 +51,7 @@ public class Game_Manager : MonoBehaviour
                 {
                     WinnerText.text = "Fire Wizard Wins!";
                     WinnerText.gameObject.SetActive(true);
+                    Fireworks.SetActive(true);
                 }
             }
         }
@@ -55,22 +60,6 @@ public class Game_Manager : MonoBehaviour
     [PunRPC]
     private void GemGrabbed(string wizardName)
     {
-        /*
-        // Get wizard object from name
-        Wizard wizard = null;
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-        for(int i = 0; i < players.Length; i++)
-        {
-           if(players[i].name == wizardName)
-            {
-                wizard = players[i].GetComponentInChildren<Wizard>();
-            }
-        }
-        if(wizard == null)
-        {
-            Debug.LogError("ERROR: Wizard " + wizardName + " cannot grab Gem because it cannot be found! Shit!");
-        }
-        */
         Wizard wizard = Wizard.GetWizardUsingName(wizardName);
         wizard.WandCrystal.SetActive(true);
         gemHeld = true;
