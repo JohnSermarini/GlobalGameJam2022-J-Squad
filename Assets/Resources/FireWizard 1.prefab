@@ -39,10 +39,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6243694079002775131}
     m_Modifications:
-    - target: {fileID: 3115829539769237302, guid: 6ea1bfa198eefeb4784a8f2dffa1fd97, type: 3}
-      propertyPath: usingNewWizard
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6062596367623990705, guid: 6ea1bfa198eefeb4784a8f2dffa1fd97, type: 3}
       propertyPath: m_Name
       value: WizardModel
