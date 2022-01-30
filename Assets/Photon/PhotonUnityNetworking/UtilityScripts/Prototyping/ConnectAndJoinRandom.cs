@@ -114,7 +114,7 @@ namespace Photon.Pun.UtilityScripts
                 this.transform.position = IceWizTransform.position;
                 this.transform.rotation = IceWizTransform.rotation;
                 if(usingNewWizard)
-                    MyWizard = PhotonNetwork.Instantiate("IceWizard 1", transform.position, transform.rotation);
+                    MyWizard = PhotonNetwork.Instantiate("WizardModel", transform.position, transform.rotation);
                 else
                     MyWizard = PhotonNetwork.Instantiate("IceWizard", transform.position, transform.rotation);
 
@@ -124,7 +124,7 @@ namespace Photon.Pun.UtilityScripts
                 this.transform.position = FireWizTransform.position;
                 this.transform.rotation = FireWizTransform.rotation;
                 if(usingNewWizard)
-                    MyWizard = PhotonNetwork.Instantiate("FireWizard 1", transform.position, transform.rotation);
+                    MyWizard = PhotonNetwork.Instantiate("WizardModel", transform.position, transform.rotation);
                 else
                     MyWizard = PhotonNetwork.Instantiate("FireWizard", transform.position, transform.rotation);
 
@@ -134,7 +134,7 @@ namespace Photon.Pun.UtilityScripts
                 this.transform.position = ThirdWizTransform.position;
                 this.transform.rotation = ThirdWizTransform.rotation;
                 if(usingNewWizard)
-                    MyWizard = PhotonNetwork.Instantiate("FireWizard 1", transform.position, transform.rotation);
+                    MyWizard = PhotonNetwork.Instantiate("WizardModel", transform.position, transform.rotation);
                 else
                     MyWizard = PhotonNetwork.Instantiate("FireWizard", transform.position, transform.rotation);
             }

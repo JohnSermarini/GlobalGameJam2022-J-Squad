@@ -26,12 +26,12 @@ public class NetworkPlayer : MonoBehaviour
 
         if (usingNewWizard)
         {
-            //ParentConstraint head_PC = head.GetComponent<ParentConstraint>();
-            //head_PC.constraintActive = false;
-            //ConstraintSource csHead = new ConstraintSource();
-            //csHead.sourceTransform = headRig.transform;
-            //head_PC.SetSource(0, csHead);
-            //head_PC.constraintActive = true;
+            ParentConstraint head_PC = head.GetComponent<ParentConstraint>();
+            head_PC.constraintActive = false;
+            ConstraintSource csHead = new ConstraintSource();
+            csHead.sourceTransform = headRig.transform;
+            head_PC.SetSource(0, csHead);
+            head_PC.constraintActive = true;
 
             ConstraintSource csRight = new ConstraintSource();
             ParentConstraint rightHand_PC = righthand.GetComponent<ParentConstraint>();
