@@ -64,7 +64,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &877021741
 MonoBehaviour:
@@ -117,7 +117,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bbd27f2c763e344698029762a4334c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dropHeight: 3
   photonView: {fileID: 877021742}
+  collider: {fileID: 2978890768389109305}
+  rb: {fileID: 877021744}
+  crystal: {fileID: 8177536419329329178}
 --- !u!1001 &8178536431322873892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -175,6 +179,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 465c505844950da499dcf096a6da4409, type: 3}
+--- !u!1 &8177536419329329178 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1000012006197310, guid: 465c505844950da499dcf096a6da4409, type: 3}
+  m_PrefabInstance: {fileID: 8178536431322873892}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8174537382106902902 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000011695518034, guid: 465c505844950da499dcf096a6da4409, type: 3}

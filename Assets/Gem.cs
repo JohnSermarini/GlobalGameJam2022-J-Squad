@@ -111,17 +111,24 @@ public class Gem : MonoBehaviour
     //    gameManagerPhotonView.RPC("GemDropped", RpcTarget.All);
     //}
 
+
     public void DropGemAtPosition(Vector3 position)
     {
         //Unparent if necessary
         Debug.Log("Drop DropGemAtPosition called at " + position);
         transform.position = position;
 
-        collider.enabled = true;
-        rb.useGravity = true;
-        crystal.SetActive(true);
+        photonView.RPC("FixComponentOnDrop", RpcTarget.All);
 
         PhotonView gameManagerPhotonView = gameManager.GetComponent<PhotonView>();
         gameManagerPhotonView.RPC("GemDropped", RpcTarget.All);
+    }
+
+    [PunRPC]
+    public void FixComponentOnDrop()
+    {
+        collider.enabled = true;
+        rb.useGravity = true;
+        crystal.SetActive(true);
     }
 }

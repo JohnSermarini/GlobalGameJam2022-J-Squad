@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c83aff5b1006d4aa10173f6e77868c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FireSpawn: {fileID: 0}
+  IceSpawn: {fileID: 0}
   photonView: {fileID: 0}
   head: {fileID: 7011063961894608779}
   lefthand: {fileID: 7094818820154597395}
