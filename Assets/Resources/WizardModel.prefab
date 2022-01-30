@@ -2410,7 +2410,7 @@ GameObject:
   - component: {fileID: 1905697251}
   - component: {fileID: 3115829539769237302}
   - component: {fileID: 319210426633528181}
-  - component: {fileID: 1409941306944494439}
+  - component: {fileID: 4600641460353024438}
   m_Layer: 0
   m_Name: WizardModel
   m_TagString: Untagged
@@ -2501,7 +2501,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1918f158188870840be32b099b759bee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  head: {fileID: 2583287966853408661}
+  usingNewWizard: 1
+  head: {fileID: 4389638867538351403}
   lefthand: {fileID: 7265742514548117721}
   righthand: {fileID: 2718514714894244086}
   photonView: {fileID: 319210426633528181}
@@ -2533,7 +2534,7 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &1409941306944494439
+--- !u!114 &4600641460353024438
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2542,7 +2543,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6062596367623990705}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 600d0600ea024a94499bae480b899408, type: 3}
+  m_Script: {fileID: 11500000, guid: 95c83aff5b1006d4aa10173f6e77868c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   photonView: {fileID: 319210426633528181}
