@@ -3,7 +3,27 @@ guid: f7723b9c391906141b8cec7b0df2aace
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CP_Side
+    second: {fileID: 2100000, guid: 126372a01fc094a489ca414789fbc940, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Center Pillar
+    second: {fileID: 2100000, guid: 4213ac578f765d94eb0405f6380e1e20, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ground
+    second: {fileID: 2100000, guid: 1fc3202ee5d15ac4f9a246330306360b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tile
+    second: {fileID: 2100000, guid: 80e8cb1695fae324f8a8b77ae994b9c2, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
