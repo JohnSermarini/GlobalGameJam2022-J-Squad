@@ -47,8 +47,8 @@ public class WizardShot : MonoBehaviour
         {
             GameObject xrOrigin = GameObject.Find("XR Origin");
 
-            // Play particles
-            PlayPlayerCollisionParticles(xrOrigin.transform.position, xrOrigin.transform.rotation);
+            // Play particles at hit wizard position
+            PlayPlayerCollisionParticles(xrOrigin.transform.position, Quaternion.identity);
 
             Wizard wizard = Wizard.GetMyWizard();
             Debug.Log(wizard.transform.parent.name + " hit!");
