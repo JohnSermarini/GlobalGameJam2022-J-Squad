@@ -20,12 +20,12 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.022695275, g: 0.008677464, b: 0.122641504, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 0
-  m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_AmbientMode: 3
+  m_SubtractiveShadowColor: {r: 0.38679248, g: 0.2025187, b: 0.37569854, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: cede08c9fc471e64884909cd4bbeaf59, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -33,8 +33,8 @@ RenderSettings:
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
-  m_DefaultReflectionResolution: 128
-  m_ReflectionBounces: 1
+  m_DefaultReflectionResolution: 1024
+  m_ReflectionBounces: 2
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
@@ -237,6 +237,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4ab930456611e246a3a56992d2d6928, type: 3}
+--- !u!1001 &1213651521
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2486120460284653027, guid: 6280404e088d72945b1d3e77eeafeca8, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486120460284653027, guid: 6280404e088d72945b1d3e77eeafeca8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.2376208
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486120460284653027, guid: 6280404e088d72945b1d3e77eeafeca8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7992995
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486120460284653027, guid: 6280404e088d72945b1d3e77eeafeca8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.9792252
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486120460284653027, guid: 6280404e088d72945b1d3e77eeafeca8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486120460284653027, guid: 6280404e088d72945b1d3e77eeafeca8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486120460284653027, guid: 6280404e088d72945b1d3e77eeafeca8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486120460284653027, guid: 6280404e088d72945b1d3e77eeafeca8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486120460284653027, guid: 6280404e088d72945b1d3e77eeafeca8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486120460284653027, guid: 6280404e088d72945b1d3e77eeafeca8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486120460284653027, guid: 6280404e088d72945b1d3e77eeafeca8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4242368445929077768, guid: 6280404e088d72945b1d3e77eeafeca8, type: 3}
+      propertyPath: m_Name
+      value: LightRig
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6280404e088d72945b1d3e77eeafeca8, type: 3}
 --- !u!1 &1474345263
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,6 +355,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 877021742, guid: a12473cb391c4874ebad9de03349a5f2, type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3262347344993831476, guid: a12473cb391c4874ebad9de03349a5f2, type: 3}
       propertyPath: m_Name
       value: Gem
