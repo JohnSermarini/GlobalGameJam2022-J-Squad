@@ -45,7 +45,7 @@ public class WizardShot : MonoBehaviour
 
             // Apply on-hit effect
             PhotonView collisionPhotonView = wizard.GetComponent<PhotonView>();
-            if(collisionPhotonView != null && other.gameObject.GetComponent<Wizard>() != null) // Collision object is a wizard
+            if(collisionPhotonView != null) // Collision object is a wizard
             {
                 collisionPhotonView.RPC("MoveToSpawn", RpcTarget.All);
                 //collisionPhotonView.RPC("MoveToSpawn", RpcTarget.All, "jup", "and jup.")
