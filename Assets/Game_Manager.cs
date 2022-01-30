@@ -2,9 +2,11 @@ using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Game_Manager : MonoBehaviour
 {
+    public Text WinnerText;
     public bool gemHeld = false;
     public bool incFire = false;
     public bool incIce = false;
@@ -12,6 +14,9 @@ public class Game_Manager : MonoBehaviour
     public int FirePotatoTimer = 0;
     public int IcePotatoTimer = 0;
     public int victoryCondition = 2000;
+
+    public Image IceBillboard;
+    public Image FireBillboard;
 
     public PhotonView photonView;
 
@@ -22,17 +27,27 @@ public class Game_Manager : MonoBehaviour
 
     private void Update()
     {
-        if (gemHeld)
+        if (gemHeld && string.IsNullOrEmpty(WinnerText.text))
         {
             if (incIce == true)
             {
                 IcePotatoTimer = IcePotatoTimer + 1;
-                //Debug.Log("Ice count: " + IcePotatoTimer);
+                IceBillboard.fillAmount = (float)IcePotatoTimer / (float)victoryCondition;
+                if (Mathf.Approximately(IceBillboard.fillAmount, 1f))
+                {
+                    WinnerText.text = "Ice Wizard Wins!";
+                    WinnerText.gameObject.SetActive(true);
+                }
             }
             else if (incFire == true)
             {
                 FirePotatoTimer = FirePotatoTimer + 1;
-                //Debug.Log("Fire count: " + FirePotatoTimer);
+                FireBillboard.fillAmount = (float)FirePotatoTimer / (float)victoryCondition;
+                if (Mathf.Approximately(FireBillboard.fillAmount, 1f))
+                {
+                    WinnerText.text = "Fire Wizard Wins!";
+                    WinnerText.gameObject.SetActive(true);
+                }
             }
         }
     }

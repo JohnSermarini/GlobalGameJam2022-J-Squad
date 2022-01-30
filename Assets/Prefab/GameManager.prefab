@@ -45,9 +45,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5519a23f656e904ab1bc2821ec9fcb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WinnerText: {fileID: 0}
+  gemHeld: 0
+  incFire: 0
+  incIce: 0
   Timer: 0
   FirePotatoTimer: 0
   IcePotatoTimer: 0
+  victoryCondition: 200
+  IceBillboard: {fileID: 0}
+  FireBillboard: {fileID: 0}
+  photonView: {fileID: 3098649808237723636}
 --- !u!114 &3098649808237723636
 MonoBehaviour:
   m_ObjectHideFlags: 0
