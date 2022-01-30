@@ -1,9 +1,27 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: 72a64002b1b8a304b941c9b83560cbc6
 ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable: []
   externalObjects: {}
+=======
+guid: 059f9dcee07300145acc6b3a2d7856cb
+ModelImporter:
+  serializedVersion: 21202
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ch39_Body
+    second: {fileID: 2100000, guid: 369137c9548652940af04a14a4b85858, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WoodBarkMaterial
+    second: {fileID: 2100000, guid: 60386977ddb15854bac26bcea4deeec6, type: 2}
+>>>>>>> Stashed changes
   materials:
     materialImportMode: 2
     materialName: 0

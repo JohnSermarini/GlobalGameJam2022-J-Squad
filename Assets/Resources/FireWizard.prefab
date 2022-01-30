@@ -74,10 +74,26 @@ PrefabInstance:
       propertyPath: photonView
       value: 
       objectReference: {fileID: 2907019088218070861}
+    - target: {fileID: 961440777297025309, guid: a0b2f02951c220849ad352ec4a6ec12d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1884758457008950335, guid: a0b2f02951c220849ad352ec4a6ec12d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 409bf720e9924426b9f253cf037a8f4e, type: 2}
+    - target: {fileID: 3327356293620209453, guid: a0b2f02951c220849ad352ec4a6ec12d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 369137c9548652940af04a14a4b85858, type: 2}
+    - target: {fileID: 3896916472654514151, guid: a0b2f02951c220849ad352ec4a6ec12d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 369137c9548652940af04a14a4b85858, type: 2}
+    - target: {fileID: 3987429324351820914, guid: a0b2f02951c220849ad352ec4a6ec12d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 369137c9548652940af04a14a4b85858, type: 2}
     - target: {fileID: 5811026489352702261, guid: a0b2f02951c220849ad352ec4a6ec12d, type: 3}
       propertyPath: m_Name
       value: Wizard
