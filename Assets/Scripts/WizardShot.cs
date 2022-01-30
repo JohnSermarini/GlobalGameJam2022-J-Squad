@@ -14,12 +14,18 @@ public class WizardShot : MonoBehaviour
     private Rigidbody rb;
     private PhotonView photonView;
 
+    private Game_Manager gameManager;
+    private Gem gem;
+
     // Start is called before the first frame update
     void Start()
     {
         collider = GetComponent<SphereCollider>();
         rb = GetComponent<Rigidbody>();
         photonView = GetComponent<PhotonView>();
+
+        gameManager = GameObject.Find("GameManager").GetComponent<Game_Manager>();
+        gem = GameObject.Find("Gem").GetComponent<Gem>();
 
         rb.AddForce(launchAngle * velocity, ForceMode.VelocityChange);
         if(photonView.IsMine)
@@ -45,6 +51,39 @@ public class WizardShot : MonoBehaviour
             if (wizard.gameObject.transform.parent.name.Contains("Ice"))
                 isIce = true;
 
+            // Gem
+            if(gameManager.gemHeld)
+            {
+                if(gameManager.incIce == true) // Ice has it
+                {
+                    if(isIce == true)
+                    {
+                        // Drop the gem at ice
+                        //gem.GetComponent<PhotonView>().RequestOwnership();
+                        gem.DropGemAtPosition(wizard.transform.position);
+
+                    }
+                    else
+                    {
+                        // its ok, fireman doesnt have the gem
+                    }
+                }
+                else // Fire has it
+                {
+                    if(isIce == false)
+                    {
+                        // Drop the gem at fire
+                        //gem.GetComponent<PhotonView>().RequestOwnership();
+                        gem.DropGemAtPosition(wizard.transform.position);
+                    }
+                    else
+                    {
+                        // its ok, iceman doesnt have the gem
+                    }
+                }
+            }
+
+            // Respawn
             wizard.MoveToSpawn(isIce);
         }
 

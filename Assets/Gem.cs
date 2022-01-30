@@ -54,18 +54,6 @@ public class Gem : MonoBehaviour
     }
 
     [PunRPC]
-    public void DropGemAtPosition(string xPos, string yPos, string zPos)
-    {
-        //Unparent if necessary
-        Vector3 dropPosition = new Vector3(float.Parse(xPos), (float.Parse(yPos) + dropHeight), (float.Parse(zPos)));
-        transform.position = dropPosition;
-
-        collider.enabled = true;
-        rb.useGravity = true;
-        crystal.SetActive(true);
-    }
-
-    [PunRPC]
     public void PickUpGem(string wizardName)
     {
         Debug.Log(wizardName + " picked up gem!");
@@ -78,33 +66,59 @@ public class Gem : MonoBehaviour
         gameManagerPhotonView.RPC("GemGrabbed", RpcTarget.All, wizardName);
     }
 
-    [PunRPC]
-    public void DropGem(string wizardNameWhoHadGem)
+
+    //[PunRPC]
+    //public void DropGemAtPosition(string xPos, string yPos, string zPos)
+    //{
+    //    //Unparent if necessary
+    //    Vector3 dropPosition = new Vector3(float.Parse(xPos), (float.Parse(yPos) + dropHeight), (float.Parse(zPos)));
+    //    transform.position = dropPosition;
+
+    //    collider.enabled = true;
+    //    rb.useGravity = true;
+    //    crystal.SetActive(true);
+    //}
+
+    //[PunRPC]
+    //public void DropGem(string wizardNameWhoHadGem)
+    //{
+    //    collider.enabled = true;
+    //    rb.useGravity = true;
+    //    crystal.SetActive(true);
+
+    //    // Drop Gem at player location
+    //    // Get wizard object from name
+    //    /*
+    //    Wizard wizard = null;
+    //    GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+    //    for(int i = 0; i < players.Length; i++)
+    //    {
+    //        if(players[i].name == wizardNameWhoHadGem)
+    //        {
+    //            wizard = players[i].GetComponentInChildren<Wizard>();
+    //        }
+    //    }
+    //    if(wizard == null)
+    //    {
+    //        Debug.LogError("ERROR: Wizard " + wizardNameWhoHadGem + " cannot drop Gem because it cannot be found! Shit!");
+    //    }
+    //    */
+    //    Wizard wizard = Wizard.GetWizardUsingName(wizardNameWhoHadGem);
+    //    Vector3 wizardPosition = wizard.head.transform.position;
+    //    photonView.RPC("DropGemAtPosition", RpcTarget.All, wizardPosition.x.ToString(), wizardPosition.y.ToString(), wizardPosition.z.ToString());
+
+    //    PhotonView gameManagerPhotonView = gameManager.GetComponent<PhotonView>();
+    //    gameManagerPhotonView.RPC("GemDropped", RpcTarget.All);
+    //}
+
+    public void DropGemAtPosition(Vector3 position)
     {
+        //Unparent if necessary
+        transform.position = position;
+
         collider.enabled = true;
         rb.useGravity = true;
         crystal.SetActive(true);
-
-        // Drop Gem at player location
-        // Get wizard object from name
-        /*
-        Wizard wizard = null;
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-        for(int i = 0; i < players.Length; i++)
-        {
-            if(players[i].name == wizardNameWhoHadGem)
-            {
-                wizard = players[i].GetComponentInChildren<Wizard>();
-            }
-        }
-        if(wizard == null)
-        {
-            Debug.LogError("ERROR: Wizard " + wizardNameWhoHadGem + " cannot drop Gem because it cannot be found! Shit!");
-        }
-        */
-        Wizard wizard = Wizard.GetWizardUsingName(wizardNameWhoHadGem);
-        Vector3 wizardPosition = wizard.head.transform.position;
-        photonView.RPC("DropGemAtPosition", RpcTarget.All, wizardPosition.x.ToString(), wizardPosition.y.ToString(), wizardPosition.z.ToString());
 
         PhotonView gameManagerPhotonView = gameManager.GetComponent<PhotonView>();
         gameManagerPhotonView.RPC("GemDropped", RpcTarget.All);
