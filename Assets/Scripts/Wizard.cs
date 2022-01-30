@@ -88,7 +88,7 @@ public class Wizard : MonoBehaviour
         foreach(var device in controllers)
         {
             bool buttonValue;
-            if(device.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primaryButton, out buttonValue) && buttonValue)
+            if(device.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out buttonValue) && buttonValue)
             {
                 return true;
             }
