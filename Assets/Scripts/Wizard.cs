@@ -125,7 +125,6 @@ public class Wizard : MonoBehaviour
         shot.GetComponent<WizardShot>().SetLaunchParameters(shotSpawnPoint, righthand.transform.forward);
     }
 
-    [PunRPC]
     public void MoveToSpawn(bool isIce)
     {
         Debug.Log("MoveToSpawn called on " + transform.parent.name);
