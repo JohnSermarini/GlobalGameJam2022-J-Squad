@@ -64,6 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   usingNewWizard: 0
+  face: {fileID: 4136610784208424424}
   head: {fileID: 912996527888372190}
   lefthand: {fileID: 7689909211020274566}
   righthand: {fileID: 9201597123005582701}
@@ -200,6 +201,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &4136610784208424424 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5573908219859689164, guid: a0b2f02951c220849ad352ec4a6ec12d, type: 3}
+  m_PrefabInstance: {fileID: 8372840870408803108}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &826514864676361684 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9172161780263913200, guid: a0b2f02951c220849ad352ec4a6ec12d, type: 3}

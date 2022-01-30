@@ -9,6 +9,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class NetworkPlayer : MonoBehaviour
 {
     public bool usingNewWizard;
+    public Transform face;
     public Transform head;
     public Transform lefthand;
     public Transform righthand;
@@ -55,7 +56,8 @@ public class NetworkPlayer : MonoBehaviour
         {
             //righthand.gameObject.SetActive(false);
             //lefthand.gameObject.SetActive(false);
-            head.gameObject.SetActive(false);
+            if(face.gameObject.activeSelf)
+                face.gameObject.SetActive(false);
 
             MapPosition(head, headRig);
             MapPosition(righthand, rightHandRig);
