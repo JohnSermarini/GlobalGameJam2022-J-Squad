@@ -294,6 +294,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6280404e088d72945b1d3e77eeafeca8, type: 3}
+--- !u!4 &1242275387 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2880030962385210707, guid: 601a8cc4d8fa9c54e8a2550ef77898f4, type: 3}
+  m_PrefabInstance: {fileID: 460431954}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1474345263
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,19 +528,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3393784610964104091, guid: f6652418956ffe442bc10e37ad3553a2, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.98754287
       objectReference: {fileID: 0}
     - target: {fileID: 3393784610964104091, guid: f6652418956ffe442bc10e37ad3553a2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.15735011
       objectReference: {fileID: 0}
     - target: {fileID: 3393784610964104091, guid: f6652418956ffe442bc10e37ad3553a2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3393784610964104091, guid: f6652418956ffe442bc10e37ad3553a2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3393784610964104091, guid: f6652418956ffe442bc10e37ad3553a2, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -561,6 +566,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Score_Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3393784610964104095, guid: f6652418956ffe442bc10e37ad3553a2, type: 3}
+      propertyPath: m_Sources.Array.data[0].sourceTransform
+      value: 
+      objectReference: {fileID: 1242275387}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6652418956ffe442bc10e37ad3553a2, type: 3}
 --- !u!114 &2039218665 stripped
