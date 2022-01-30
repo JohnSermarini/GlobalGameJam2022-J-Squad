@@ -126,7 +126,7 @@ public class Wizard : MonoBehaviour
     }
 
     [PunRPC]
-    protected void MoveToSpawn(bool isIce)
+    public void MoveToSpawn(bool isIce)
     {
         Debug.Log("MoveToSpawn called on " + transform.parent.name);
         if(isIce)
