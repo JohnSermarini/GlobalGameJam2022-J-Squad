@@ -13,7 +13,7 @@ public class Game_Manager : MonoBehaviour
     public int Timer;
     public int FirePotatoTimer = 0;
     public int IcePotatoTimer = 0;
-    public int victoryCondition = 2000;
+    public int victoryCondition = 20000;
 
     public Image IceBillboard;
     public Image FireBillboard;
