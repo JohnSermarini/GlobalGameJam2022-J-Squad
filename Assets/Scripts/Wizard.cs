@@ -152,7 +152,7 @@ public class Wizard : MonoBehaviour
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         for(int i = 0; i < players.Length; i++)
         {
-            if(players[i].GetComponent<PhotonView>() != null && !players[i].GetComponent<PhotonView>().IsMine)
+            if(players[i].GetComponentInChildren<PhotonView>() != null && !players[i].GetComponentInChildren<PhotonView>().IsMine)
             {
                 wizard = players[i].GetComponentInChildren<Wizard>();
                 return wizard;
