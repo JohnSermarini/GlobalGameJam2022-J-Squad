@@ -19,6 +19,8 @@ using UnityEngine;
 
 //using Photon.Pun;
 using Photon.Realtime;
+using System.Collections;
+using UnityEngine.UI;
 
 namespace Photon.Pun.UtilityScripts
 {
@@ -37,6 +39,13 @@ namespace Photon.Pun.UtilityScripts
         public Transform ThirdWizTransform;
         public Transform GemSpawn;
 
+        // Forcefields
+        public GameObject IceWizardForcefield;
+        public GameObject FireWizardForcefield;
+
+        // Timer countdown
+        public int timer = 5;
+        public Text Timer_Text;
 
         /// <summary>Connect automatically? If false you can set this to true later on or call ConnectUsingSettings in your own scripts.</summary>
         public bool AutoConnect = true;
@@ -99,6 +108,28 @@ namespace Photon.Pun.UtilityScripts
         {
             base.OnJoinedRoom();
             CreatePlayer();
+
+            int playerCount = PhotonNetwork.PlayerList.Length;
+            if(playerCount == 2)
+            {
+                StartCoroutine(StartCountdown());
+            }
+        }
+
+        public IEnumerator StartCountdown()
+        {
+            while(timer != -1)
+            {
+                yield return new WaitForSeconds(1f);
+                Timer_Text.text = timer.ToString() + "...";
+                timer--;
+            }
+            Timer_Text.enabled = false;
+
+            // Destroy forcefield
+            RemoveForcefields();
+
+            yield return null;
         }
 
         public override void OnLeftRoom()
@@ -108,7 +139,14 @@ namespace Photon.Pun.UtilityScripts
             //    Destroy(MyWizard.transform.parent);
             Destroy(MyWizard);
         }
-        
+
+        public override void OnCreatedRoom()
+        {
+            base.OnCreatedRoom();
+
+            //CreateForcefields();
+        }
+
         public void CreatePlayer()
         {
             int playerCount = PhotonNetwork.PlayerList.Length;
@@ -133,7 +171,6 @@ namespace Photon.Pun.UtilityScripts
                     MyWizard = PhotonNetwork.Instantiate("WizardModel", transform.position, transform.rotation);
                 else
                     MyWizard = PhotonNetwork.Instantiate("FireWizard", transform.position, transform.rotation);
-
             }
             else
             {
@@ -146,6 +183,22 @@ namespace Photon.Pun.UtilityScripts
             }
             XROrigin.transform.position = this.transform.position;
             XROrigin.transform.rotation = this.transform.rotation;
+        }
+
+        /*
+        private void CreateForcefields()
+        {
+            IceWizardForcefield = PhotonNetwork.Instantiate("WizardModel", IceWizTransform.position, IceWizTransform.rotation); // TODO replace resource prefab
+            FireWizardForcefield = PhotonNetwork.Instantiate("WizardModel", FireWizTransform.position, FireWizTransform.rotation); // TODO replace resource prefab
+        }
+        */
+
+        private void RemoveForcefields()
+        {
+            // Particles and sounds??
+
+            Destroy(IceWizardForcefield);
+            Destroy(FireWizardForcefield);
         }
     }
 }
