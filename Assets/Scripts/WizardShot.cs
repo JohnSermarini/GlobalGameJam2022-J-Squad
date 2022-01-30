@@ -37,12 +37,19 @@ public class WizardShot : MonoBehaviour
     {
         Debug.Log(other.name + " hit!! WOW!");
 
-        // Apply on-hit effect
-        PhotonView collisionPhotonView = other.GetComponent<PhotonView>(); 
-        if(collisionPhotonView != null && other.gameObject.GetComponent<Wizard>() != null) // Collision object is a wizard
+        // TODO set up XR self check
+        // If hit XR rig, kill other player
+        if(other.tag == "XR")
         {
-            collisionPhotonView.RPC("MoveToSpawn", RpcTarget.All);
-            //collisionPhotonView.RPC("MoveToSpawn", RpcTarget.All, "jup", "and jup.")
+            Wizard wizard = Wizard.GetEnemyWizard();
+
+            // Apply on-hit effect
+            PhotonView collisionPhotonView = wizard.GetComponent<PhotonView>();
+            if(collisionPhotonView != null && other.gameObject.GetComponent<Wizard>() != null) // Collision object is a wizard
+            {
+                collisionPhotonView.RPC("MoveToSpawn", RpcTarget.All);
+                //collisionPhotonView.RPC("MoveToSpawn", RpcTarget.All, "jup", "and jup.")
+            }
         }
 
         // Delete shot object

@@ -37,6 +37,7 @@ public class Game_Manager : MonoBehaviour
     [PunRPC]
     private void GemGrabbed(string wizardName)
     {
+        /*
         // Get wizard object from name
         Wizard wizard = null;
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
@@ -51,6 +52,8 @@ public class Game_Manager : MonoBehaviour
         {
             Debug.LogError("ERROR: Wizard " + wizardName + " cannot grab Gem because it cannot be found! Shit!");
         }
+        */
+        Wizard wizard = Wizard.GetWizardUsingName(wizardName);
 
         gemHeld = true;
         incIce = false;

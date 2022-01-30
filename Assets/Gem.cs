@@ -87,6 +87,7 @@ public class Gem : MonoBehaviour
 
         // Drop Gem at player location
         // Get wizard object from name
+        /*
         Wizard wizard = null;
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         for(int i = 0; i < players.Length; i++)
@@ -100,6 +101,8 @@ public class Gem : MonoBehaviour
         {
             Debug.LogError("ERROR: Wizard " + wizardNameWhoHadGem + " cannot drop Gem because it cannot be found! Shit!");
         }
+        */
+        Wizard wizard = Wizard.GetWizardUsingName(wizardNameWhoHadGem);
         Vector3 wizardPosition = wizard.head.transform.position;
         photonView.RPC("DropGemAtPosition", RpcTarget.All, wizardPosition.x.ToString(), wizardPosition.y.ToString(), wizardPosition.z.ToString());
 

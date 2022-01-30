@@ -125,4 +125,44 @@ public class Wizard : MonoBehaviour
         xrOrigin.transform.position = spawnPoint;
         //transform.rotation = spawnRotation;
     }
+
+    public static Wizard GetWizardUsingName(string wizardName)
+    {
+        // Get wizard object from name
+        Wizard wizard = null;
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        for(int i = 0; i < players.Length; i++)
+        {
+            if(players[i].name == wizardName)
+            {
+                wizard = players[i].GetComponentInChildren<Wizard>();
+            }
+        }
+        if(wizard == null)
+        {
+            Debug.LogError("ERROR: Wizard " + wizardName + " cannot drop Gem because it cannot be found! Shit!");
+        }
+
+        return wizard;
+    }
+
+    public static Wizard GetEnemyWizard()
+    {
+        Wizard wizard = null;
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        for(int i = 0; i < players.Length; i++)
+        {
+            if(players[i].GetComponent<PhotonView>() != null && !players[i].GetComponent<PhotonView>().IsMine)
+            {
+                wizard = players[i].GetComponentInChildren<Wizard>();
+                return wizard;
+            }
+        }
+        if(wizard == null)
+        {
+            Debug.LogError("ERROR: Enemy wizard not found!");
+        }
+
+        return null;
+    }
 }
