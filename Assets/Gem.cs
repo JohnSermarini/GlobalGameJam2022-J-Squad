@@ -29,7 +29,6 @@ public class Gem : MonoBehaviour
         // Collision with player
         if (collision.gameObject.name == "XR Origin")
         {
-            Debug.LogError("XR Origin");
             //if (photonView == null)
             //photonView = gameObject.GetComponent<PhotonView>();
 
@@ -46,8 +45,6 @@ public class Gem : MonoBehaviour
                 }
                 if (playerPhotonView.IsMine == true) // Player grabbed Gem
                 {
-                    Debug.LogError("mine XR Origin");
-
                     playerWizardName = playerPhotonView.transform.parent.name;
                     //Wizard wizard = playerPhotonView.gameObject.GetComponent<Wizard>();
                     photonView.RPC("PickUpGem", RpcTarget.All, playerWizardName);//PickUpGem(wizard);
