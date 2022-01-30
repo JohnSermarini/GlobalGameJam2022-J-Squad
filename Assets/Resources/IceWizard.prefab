@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c83aff5b1006d4aa10173f6e77868c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WandCrystal: {fileID: 7544632617066208854}
   FireSpawn: {fileID: 0}
   IceSpawn: {fileID: 0}
   photonView: {fileID: 0}
@@ -158,6 +159,11 @@ GameObject:
 --- !u!4 &3326483691775773481 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4769874435621834175, guid: a0b2f02951c220849ad352ec4a6ec12d, type: 3}
+  m_PrefabInstance: {fileID: 7790089145817761430}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7544632617066208854 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 335552985836198080, guid: a0b2f02951c220849ad352ec4a6ec12d, type: 3}
   m_PrefabInstance: {fileID: 7790089145817761430}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &7094818820154597395 stripped
