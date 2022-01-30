@@ -22,15 +22,18 @@ public class Game_Manager : MonoBehaviour
 
     private void Update()
     {
-        if(incIce == true)
+        if(gemHeld)
         {
-            IcePotatoTimer = IcePotatoTimer + 1;
-            Debug.Log("Ice count: " + IcePotatoTimer);
-        }
-        else if(incFire == true)
-        {
-            FirePotatoTimer = FirePotatoTimer + 1;
-            Debug.Log("Fire count: " + FirePotatoTimer);
+            if(incIce == true)
+            {
+                IcePotatoTimer = IcePotatoTimer + 1;
+                Debug.Log("Ice count: " + IcePotatoTimer);
+            }
+            else if(incFire == true)
+            {
+                FirePotatoTimer = FirePotatoTimer + 1;
+                Debug.Log("Fire count: " + FirePotatoTimer);
+            }
         }
     }
 
@@ -71,6 +74,8 @@ public class Game_Manager : MonoBehaviour
     [PunRPC]
     private void GemDropped()
     {
+        Debug.Log("GemDropped RPC recieved");
+
         gemHeld = false;
         incFire = false;
         incIce = false;
