@@ -607,6 +607,10 @@ PrefabInstance:
       propertyPath: FireBillboard
       value: 
       objectReference: {fileID: 2039218667}
+    - target: {fileID: 3098649808237723634, guid: dff8401a3de2c7747b514730d93f405c, type: 3}
+      propertyPath: victoryCondition
+      value: 3600
+      objectReference: {fileID: 0}
     - target: {fileID: 3098649808237723635, guid: dff8401a3de2c7747b514730d93f405c, type: 3}
       propertyPath: m_RootOrder
       value: 4
