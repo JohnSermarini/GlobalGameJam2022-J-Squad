@@ -7,9 +7,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5126427258924981038, guid: 092833758cf204c49aa44f17f1b32c2e, type: 3}
+      propertyPath: m_Volume
+      value: 0.654
+      objectReference: {fileID: 0}
+    - target: {fileID: 5126427258924981038, guid: 092833758cf204c49aa44f17f1b32c2e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2cb52bce40e12da40acdc94622142ff5, type: 3}
     - target: {fileID: 6895039521352422180, guid: 092833758cf204c49aa44f17f1b32c2e, type: 3}
       propertyPath: m_Name
       value: FireShot
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849253520309687817, guid: 092833758cf204c49aa44f17f1b32c2e, type: 3}
+      propertyPath: TrailModule.minVertexDistance
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849253520309687817, guid: 092833758cf204c49aa44f17f1b32c2e, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849253520309687817, guid: 092833758cf204c49aa44f17f1b32c2e, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8284806836185646200, guid: 092833758cf204c49aa44f17f1b32c2e, type: 3}
       propertyPath: m_RootOrder

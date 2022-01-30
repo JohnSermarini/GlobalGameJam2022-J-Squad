@@ -7,9 +7,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 253556478990320680, guid: 092833758cf204c49aa44f17f1b32c2e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1987348056656791191, guid: 092833758cf204c49aa44f17f1b32c2e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3536909682266811581, guid: 092833758cf204c49aa44f17f1b32c2e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6769937705909526711, guid: 092833758cf204c49aa44f17f1b32c2e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6895039521352422180, guid: 092833758cf204c49aa44f17f1b32c2e, type: 3}
       propertyPath: m_Name
       value: IceShot
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849253520328134505, guid: 092833758cf204c49aa44f17f1b32c2e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8284806836185646200, guid: 092833758cf204c49aa44f17f1b32c2e, type: 3}
       propertyPath: m_RootOrder
