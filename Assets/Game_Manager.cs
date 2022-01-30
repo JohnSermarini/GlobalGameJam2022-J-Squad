@@ -27,12 +27,12 @@ public class Game_Manager : MonoBehaviour
             if(incIce == true)
             {
                 IcePotatoTimer = IcePotatoTimer + 1;
-                Debug.Log("Ice count: " + IcePotatoTimer);
+                //Debug.Log("Ice count: " + IcePotatoTimer);
             }
             else if(incFire == true)
             {
                 FirePotatoTimer = FirePotatoTimer + 1;
-                Debug.Log("Fire count: " + FirePotatoTimer);
+                //Debug.Log("Fire count: " + FirePotatoTimer);
             }
         }
     }

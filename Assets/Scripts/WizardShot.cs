@@ -54,13 +54,15 @@ public class WizardShot : MonoBehaviour
             // Gem
             if(gameManager.gemHeld)
             {
+                GameObject xrOrigin = GameObject.Find("XR Origin");
+
                 if(gameManager.incIce == true) // Ice has it
                 {
                     if(isIce == true)
                     {
                         // Drop the gem at ice
                         //gem.GetComponent<PhotonView>().RequestOwnership();
-                        gem.DropGemAtPosition(wizard.transform.position);
+                        gem.DropGemAtPosition(xrOrigin.transform.position + (Vector3.up * 2.0f));
                         Debug.Log("Iceman is dropping that mf");
 
                     }
@@ -75,7 +77,7 @@ public class WizardShot : MonoBehaviour
                     {
                         // Drop the gem at fire
                         //gem.GetComponent<PhotonView>().RequestOwnership();
-                        gem.DropGemAtPosition(wizard.transform.position);
+                        gem.DropGemAtPosition(xrOrigin.transform.position + (Vector3.up * 2.0f));
                         Debug.Log("Fireman is dropping that mf");
                     }
                     else

@@ -9,9 +9,9 @@ public class Gem : MonoBehaviour
     public float dropHeight = 3.0f;
 
     public PhotonView photonView;
-    private SphereCollider collider;
-    private Rigidbody rb;
-    private GameObject crystal;
+    public SphereCollider collider;
+    public Rigidbody rb;
+    public GameObject crystal;
 
     private void Start()
     {
@@ -114,6 +114,7 @@ public class Gem : MonoBehaviour
     public void DropGemAtPosition(Vector3 position)
     {
         //Unparent if necessary
+        Debug.Log("Drop DropGemAtPosition called at " + position);
         transform.position = position;
 
         collider.enabled = true;

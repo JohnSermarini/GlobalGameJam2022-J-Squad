@@ -12,7 +12,6 @@ public class Wizard : MonoBehaviour
     public Transform FireSpawn;
     public Transform IceSpawn;
 
-
     public PhotonView photonView;
     public GameObject head;
     public GameObject lefthand;

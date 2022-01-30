@@ -237,6 +237,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4ab930456611e246a3a56992d2d6928, type: 3}
+--- !u!1 &833512807 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8177536419329329178, guid: a12473cb391c4874ebad9de03349a5f2, type: 3}
+  m_PrefabInstance: {fileID: 1649326321}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1474345263
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,6 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c1b84a427010e0469ce0df07ab64dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  usingNewWizard: 0
   MyWizard: {fileID: 0}
   XROrigin: {fileID: 0}
   FireWizTransform: {fileID: 0}
@@ -349,6 +355,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4661800022926400516, guid: a12473cb391c4874ebad9de03349a5f2, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 1953151304}
+    - target: {fileID: 4661800022926400516, guid: a12473cb391c4874ebad9de03349a5f2, type: 3}
+      propertyPath: crystal
+      value: 
+      objectReference: {fileID: 833512807}
+    - target: {fileID: 4661800022926400516, guid: a12473cb391c4874ebad9de03349a5f2, type: 3}
+      propertyPath: collider
+      value: 
+      objectReference: {fileID: 1953151305}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a12473cb391c4874ebad9de03349a5f2, type: 3}
 --- !u!1001 &1695725009
@@ -408,6 +426,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a2e51a5af84da04085671dc4405e8db, type: 3}
+--- !u!54 &1953151304 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 877021744, guid: a12473cb391c4874ebad9de03349a5f2, type: 3}
+  m_PrefabInstance: {fileID: 1649326321}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &1953151305 stripped
+SphereCollider:
+  m_CorrespondingSourceObject: {fileID: 2978890768389109305, guid: a12473cb391c4874ebad9de03349a5f2, type: 3}
+  m_PrefabInstance: {fileID: 1649326321}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3098649808878682608
 PrefabInstance:
   m_ObjectHideFlags: 0
