@@ -45,6 +45,11 @@ public class WizardShot : MonoBehaviour
     {
         if(other.tag == "XR")
         {
+            GameObject xrOrigin = GameObject.Find("XR Origin");
+
+            // Play particles
+            PlayPlayerCollisionParticles(xrOrigin.transform.position, xrOrigin.transform.rotation);
+
             Wizard wizard = Wizard.GetMyWizard();
             Debug.Log(wizard.transform.parent.name + " hit!");
 
@@ -60,7 +65,7 @@ public class WizardShot : MonoBehaviour
             
             if(gameManager.gemHeld)
             {
-                GameObject xrOrigin = GameObject.Find("XR Origin");
+                //GameObject xrOrigin = GameObject.Find("XR Origin");
                 if (gem == null)
                     gem = GameObject.FindGameObjectWithTag("Gem").GetComponent<Gem>();
 
@@ -113,5 +118,10 @@ public class WizardShot : MonoBehaviour
     {
         yield return new WaitForSeconds(delayTime);
         PhotonNetwork.Destroy(this.gameObject);
+    }
+
+    private void PlayPlayerCollisionParticles(Vector3 position, Quaternion rotation)
+    {
+        PhotonNetwork.Instantiate("DeathParticles", position, rotation);
     }
 }

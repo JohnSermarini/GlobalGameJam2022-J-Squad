@@ -127,10 +127,16 @@ public class Wizard : MonoBehaviour
     public void MoveToSpawn(bool isIce)
     {
         Debug.Log("MoveToSpawn called on " + transform.parent.name);
+
+        // Move player
         if(isIce)
+        {
             xrOrigin.transform.position = IceSpawn.position;
+        }
         else
+        {
             xrOrigin.transform.position = FireSpawn.position;
+        }
 
         //transform.rotation = spawnRotation;
     }
