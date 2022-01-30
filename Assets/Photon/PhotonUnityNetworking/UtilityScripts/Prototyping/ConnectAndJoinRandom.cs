@@ -204,5 +204,12 @@ namespace Photon.Pun.UtilityScripts
             Destroy(IceWizardForcefield);
             Destroy(FireWizardForcefield);
         }
+
+        public override void OnPlayerEnteredRoom(Player newPlayer)
+        {
+            base.OnPlayerEnteredRoom(newPlayer);
+
+            StartCoroutine(StartCountdown());
+        }
     }
 }
