@@ -28,7 +28,6 @@ public class WizardShot : MonoBehaviour
         photonView = GetComponent<PhotonView>();
 
         gameManager = GameObject.Find("GameManager").GetComponent<Game_Manager>();
-        gem = GameObject.Find("Gem").GetComponent<Gem>();
 
         rb.AddForce(launchAngle * velocity, ForceMode.VelocityChange);
         if(photonView.IsMine)
@@ -62,6 +61,8 @@ public class WizardShot : MonoBehaviour
             if(gameManager.gemHeld)
             {
                 GameObject xrOrigin = GameObject.Find("XR Origin");
+                if (gem == null)
+                    gem = GameObject.FindGameObjectWithTag("Gem").GetComponent<Gem>();
 
                 if(gameManager.incIce == true) // Ice has it
                 {
