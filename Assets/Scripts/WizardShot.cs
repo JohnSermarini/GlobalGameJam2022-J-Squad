@@ -53,10 +53,10 @@ public class WizardShot : MonoBehaviour
             if (wizard.gameObject.transform.parent.name.Contains("Ice"))
                 isIce = true;
 
-            if (isIce && myWiz.name.Contains("Ice"))
-                return;
-            if (!isIce && myWiz.name.Contains("Fire"))
-                return;
+            //if (isIce && myWiz.name.Contains("Ice"))
+            //    return;
+            //if (!isIce && myWiz.name.Contains("Fire"))
+            //    return;
             
             if(gameManager.gemHeld)
             {
