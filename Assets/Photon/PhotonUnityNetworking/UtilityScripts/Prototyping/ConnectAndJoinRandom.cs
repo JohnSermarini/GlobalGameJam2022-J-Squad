@@ -109,11 +109,13 @@ namespace Photon.Pun.UtilityScripts
             base.OnJoinedRoom();
             CreatePlayer();
 
+            /*
             int playerCount = PhotonNetwork.PlayerList.Length;
             if(playerCount == 2)
             {
                 StartCoroutine(StartCountdown());
             }
+            */
         }
 
         public IEnumerator StartCountdown()
@@ -171,6 +173,8 @@ namespace Photon.Pun.UtilityScripts
                     MyWizard = PhotonNetwork.Instantiate("WizardModel", transform.position, transform.rotation);
                 else
                     MyWizard = PhotonNetwork.Instantiate("FireWizard", transform.position, transform.rotation);
+
+                StartCoroutine(StartCountdown());
             }
             else
             {
