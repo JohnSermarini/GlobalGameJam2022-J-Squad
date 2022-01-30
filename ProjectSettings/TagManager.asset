@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - XR
+  - Gem
   layers:
   - Default
   - TransparentFX
