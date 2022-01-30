@@ -41,6 +41,7 @@ public class Game_Manager : MonoBehaviour
                     WinnerText.text = "Ice Wizard Wins!";
                     WinnerText.gameObject.SetActive(true);
                     Fireworks.SetActive(true);
+                    StartCoroutine(ApplicationQuit());
                 }
             }
             else if (incFire == true)
@@ -52,9 +53,21 @@ public class Game_Manager : MonoBehaviour
                     WinnerText.text = "Fire Wizard Wins!";
                     WinnerText.gameObject.SetActive(true);
                     Fireworks.SetActive(true);
+                    StartCoroutine(ApplicationQuit());
                 }
             }
         }
+    }
+
+    public int QuitTimer = 15;
+    public IEnumerator ApplicationQuit() 
+    {
+        while (QuitTimer != 0)
+        {
+            yield return new WaitForSeconds(1f);
+            QuitTimer--;
+        }
+        Application.Quit();
     }
 
     [PunRPC]
